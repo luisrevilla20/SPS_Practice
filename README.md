@@ -26,11 +26,11 @@ Su finalidad es parsear y transformar los datos sobre la marcha del proceso.
 ## Práctica ElascticSearch
 Para está práctica se usó la versión *6.8.17* ya quela versión *6.6* no estaba disponible.
 
-![Deployment](./Resource/Deployment.PNG)
+![Deployment](./Resources/Deployment.PNG)
 
 1. Definir el Template
 
-![Deployment](./Resource/Template.PNG)
+![Template](./Resources/Template.PNG)
 Usando el siguiente comando en la consola de _Dev Tools_ podremos definir el template
 ```
 PUT _template/doc
