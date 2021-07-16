@@ -26,4 +26,4 @@ Su finalidad es parsear y transformar los datos sobre la marcha del proceso.
 ## Práctica ElascticSearch
 
 ## Práctica de Microservicios
-La documentación la puedes encontrar en [MICROSERVICIOS.md](./Micorservicios/MICROSERVICIOS.md)
+La documentación la puedes encontrar en [MICROSERVICIOS.md](./Microservicios/MICROSERVICIOS.md)
