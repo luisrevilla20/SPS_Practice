@@ -30,8 +30,6 @@ Para está práctica se usó la versión *6.8.17* ya quela versión *6.6* no est
 
 ### 1. Definir el Template
 
-![Template](./Resources/Template.PNG)
-
 Usando el siguiente comando en la consola de _Dev Tools_ podremos definir el template
 ```
 PUT _template/doc
@@ -96,10 +94,12 @@ PUT _template/doc
     "favoriteFruit":"apple"
 }
 ```
-Ahora cargaremos una serie de documentos en el índice. Puedes visualizar estos documentos en el archivo [Employee.json](./Resources/Employee.json).
-Ejecuta el siguiente comando en la consola de _Dev Tools_ para cargar estos documentos.
 
-![Bulk](./Resources/Bulk.PNG)
+![Template](./Resources/Template.PNG)
+
+Ahora cargaremos una serie de documentos en el índice. Puedes visualizar estos documentos en el archivo [Employee.json](./Resources/Employee.json).
+
+Ejecuta el siguiente comando en la consola de _Dev Tools_ para cargar estos documentos.
 
 _Este codigo solo es un ejemplo._ Se deberá poner todos los documentos a cargar.
 
@@ -109,15 +109,71 @@ POST /employee-*/_bulk
 {"about":"Dolor consequat elit commodo magna duis sit officia eu qui non esse proident. In ex culpa dolore velit irure non non elit dolore. Aliquip officia sint fugiat magna et non veniam veniam aliquip non ea veniam. Nulla Lorem officia magna duis labore veniam mollit culpa consectetur duis velit occaecat dolor pariatur.","address":"530 Stillwell Avenue, Strykersville, New Jersey, 601","age":26,"company":"OULU","email":"lydia.gentry@oulu.org","eyeColor":"green","favoriteFruit":"banana","friends":[{"id":0,"name":"Margaret Turner"},{"id":1,"name":"Mai Abbott"},{"id":2,"name":"Ofelia Davis"}],"greeting":"Hello, Lydia! You have 8 unread messages.","guid":"a30caf44-2d95-41a5-b03f-bfeb5b450bc1","isActive":true,"latitude":"-89.167329","longitude":"-147.674081","name":{"first":"Lydia","last":"Gentry"},"payment":"51104.66","phone":"+1 (911) 600-3341","picture":"http:\/\/placehold.it\/32x32","range":[0,1,2,3,4,5,6,7,8,9],"registered":"Tuesday, December 22, 2015 9:53 PM","tags":["ipsum","pariatur","eiusmod","dolore","ad"]}
 ```
 
+![Bulk](./Resources/Bulk.PNG)
+
 ### 2. Búsquedas sobre el Índice
 
-#### * *Busca todos los empleados que superem los 30 años.*
+#### * *Busca todos los empleados que superen los 30 años.*
 
+Para realizar esta busqueda se realizó la siguiente buesqueda:
+```
+GET /employee-sps/_search
+{
+  "query": {
+    "range":{
+      "age": {
+        "gt": 30
+      }
+    }
+  }
+}
+```
+![Query1](./Resources/Query1.PNG)
 
 #### * *Busca el top 5 empleados menores o iguales a 30 años que tienen sueldo mayor a los 50 mil pesos.*
+
+Para realizar esta busqueda se realizó la siguiente buesqueda:
+```
+GET /employee-sps/_search
+{
+  "size": 5, 
+  "query": {
+    "bool":{
+      "filter":[
+        {"range": {"age": {"lte": 30}}},
+        {"range": {"payment.keyword": {"gt": 50000.00}}}
+        ]
+    }
+  }, 
+  "sort": [
+    {
+      "payment.keyword": {
+        "order": "desc"
+      }
+    }
+  ],
+  "_source": ["name.first", "age", "payment.keyword"]
+}
+```
+![Query2](./Resources/Query2.PNG)
+
+Los 5 resultados que nos regresó fueron los siguientes:
+| Place | First name | Age | Payment |
+| :---        |    :----:   |     :----:   |          ---: |
+| 1ro | Ferrel | 27 | 9229.18 |
+| 2do | Castillo | 21 | 85014.44 |
+| 3ro | Nolan | 28 | 79171.51 |
+| 4to | Johnston | 20 | 79123.54 |
+| 5to | Kellie | 29 | 77131.15 |
+
+El primer lugar es un error ya que no debería aparacer como resultado ya que solamente cumple con el parametro de la edad pero no la del sueldo.
+
+### 3. Tablero para Visualizar Información 
 
 ## Práctica de Microservicios
 La documentación la puedes encontrar en [MICROSERVICIOS.md](./Microservicios/MICROSERVICIOS.md)
 
 ## Referencias
 [ElasticSearchGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+[AggregationsGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html)
+[QueryGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-your-data.html)
