@@ -24,6 +24,81 @@ Su finalidad es parsear y transformar los datos sobre la marcha del proceso.
 
 
 ## Práctica ElascticSearch
+Para está práctica se usó la versión *6.8.17* ya quela versión *6.6* no estaba disponible.
+
+![Deployment](./Resource/Deployment.PNG)
+
+1. Definir el Template
+
+![Deployment](./Resource/Template.PNG)
+Usando el siguiente comando en la consola de _Dev Tools_ podremos definir el template
+```
+PUT _template/doc
+{
+  "index_patterns":"employee-*"
+}
+{
+  "guid":"0cb4df76-5090-422f-9a6e-1a8b3d92b650",
+  "isActive":false,
+  "payment":3146.95,
+  "picture":"http://placehold.it/32x32",
+  "age":21,
+  "eyeColor":"brown",
+  "name":{
+    "first":"Belinda",
+    "last":"Delaney"
+  },
+  "company":"LYRIA",
+  "email":"belinda.delaney@lyria.net",
+  "phone":"+1 (995) 589-3329",
+  "address":"125 Dekoven Court, Watchtower, Iowa, 5495",
+  "about":"Amet incididunt voluptate in eu duis sint ullamco pariatur irure culpa. Amet mollit dolor excepteur nisi ex sit ullamco. Lorem veniam voluptate non est do. Est id enim incididunt dolore aliqua incididunt excepteur ipsum sint esse commodo sit. In occaecat occaecat fugiat in mollit ut sint velit reprehenderit tempor aliquip reprehenderit. Et exercitation sit elit pariatur veniam officia amet quis occaecat. Voluptate adipisicing dolor cillum anim enim sunt Lorem velit ex magna non enim.",
+  "registered":"Sunday, June 28, 2015 8:48 AM",
+  "latitude":"76.532393",
+  "longitude":"-44.824277",
+  "tags":[
+    "elit",
+    "nisi",
+    "eu",
+    "aute",
+    "deserunt"
+    ],
+    "range":[
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "friends":[
+      {
+        "id":0,
+        "name":"Jeannie Dorsey"
+        
+      },
+      {"id":1,
+      "name":"Rivera Mayo"
+        
+      },
+      {
+        "id":2,
+        "name":"Rosalind Gonzalez"
+        
+      }
+    ],
+    "greeting":"Hello, Belinda! You have 5 unread messages.",
+    "favoriteFruit":"apple"
+}
+```
+
 
 ## Práctica de Microservicios
 La documentación la puedes encontrar en [MICROSERVICIOS.md](./Microservicios/MICROSERVICIOS.md)
+
+## Referencias
+[ElasticSearchGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
