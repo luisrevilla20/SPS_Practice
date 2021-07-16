@@ -28,7 +28,7 @@ Para está práctica se usó la versión *6.8.17* ya quela versión *6.6* no est
 
 ![Deployment](./Resources/Deployment.PNG)
 
-1. Definir el Template
+### 1. Definir el Template
 
 ![Template](./Resources/Template.PNG)
 Usando el siguiente comando en la consola de _Dev Tools_ podremos definir el template
