@@ -21,7 +21,7 @@ Manda datos de auditoría, logs, cloud data, datos de disponibilidad, metricas, 
 ### Logstash
 Logstash es un pipeline el cual procesa datos y los transforma a los formatos, formas y tamaños deseados.
 Su finalidad es parsear y transformar los datos sobre la marcha del proceso.
-----------------------------------------------------------------
+
 
 ## Práctica ElascticSearch
 
