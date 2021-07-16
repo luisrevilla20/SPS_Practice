@@ -174,6 +174,8 @@ El primer lugar es un error ya que no debería aparacer como resultado ya que so
 La documentación la puedes encontrar en [MICROSERVICIOS.md](./Microservicios/MICROSERVICIOS.md)
 
 ## Referencias
-[ElasticSearchGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
-[AggregationsGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html)
-[QueryGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-your-data.html)
+* [ElasticSearchGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+
+* [AggregationsGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html)
+
+* [QueryGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-your-data.html)
