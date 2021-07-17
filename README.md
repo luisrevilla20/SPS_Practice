@@ -8,10 +8,10 @@ Elastic es un conjunto de motores los cuales ayudan a la análitica de datos. Es
 
 ### Kibana
 Kibana es el frontend que se encarga de la visualización de datos y de búsqueda para los datos indexados en *ElasticSearch*.
-Actúa como la interfaz de usaurio para monitorear y gestionar el cluster y concentrador centralizado de las soluciones intgradas.
+Actúa como la interfaz de usuario para monitorear y gestionar el cluster y concentrador centralizado de las soluciones integradas.
 
 ### ElasticSearch
-ElasticSearch es un motor de análitica y análisis distribuido para todo tipo de datos desde textuales, estructurado, no estructurados hasta datos geoespaciales. 
+ElasticSearch es un motor de análisis distribuido para todo tipo de datos desde textuales, estructurados, no estructurados hasta datos geoespaciales. 
 Se encarga principalmente del almacenamiento y el análisis de manera veloz y escalable.
 
 ### Beats
@@ -24,7 +24,7 @@ Su finalidad es parsear y transformar los datos sobre la marcha del proceso.
 
 
 ## Práctica ElascticSearch
-Para está práctica se usó la versión *6.8.17* ya quela versión *6.6* no estaba disponible.
+Para está práctica se usó la versión *6.8.17* ya que la versión *6.6* no estaba disponible.
 
 ![Deployment](./Resources/Deployment.PNG)
 
@@ -101,7 +101,7 @@ Ahora cargaremos una serie de documentos en el índice. Puedes visualizar estos 
 
 Ejecuta el siguiente comando en la consola de _Dev Tools_ para cargar estos documentos.
 
-_Este codigo solo es un ejemplo._ Se deberá poner todos los documentos a cargar.
+_Este código solo es un ejemplo._ Se deberá poner todos los documentos a cargar.
 
 ```
 POST /employee-*/_bulk
@@ -113,9 +113,9 @@ POST /employee-*/_bulk
 
 ### 2. Búsquedas sobre el Índice
 
-#### * *Busca todos los empleados que superen los 30 años.*
+#### * *Busca a todos los empleados que superen los 30 años.*
 
-Para realizar esta busqueda se realizó la siguiente buesqueda:
+Para realizar esta búsqueda se realizó el siguiente query:
 ```
 GET /employee-sps/_search
 {
@@ -130,9 +130,9 @@ GET /employee-sps/_search
 ```
 ![Query1](./Resources/Query1.PNG)
 
-#### * *Busca el top 5 empleados menores o iguales a 30 años que tienen sueldo mayor a los 50 mil pesos.*
+#### * *Busca el top 5 empleados menores o iguales a 30 años que tienen un sueldo mayor a los 50 mil pesos.*
 
-Para realizar esta busqueda se realizó la siguiente buesqueda:
+Para realizar esta búsqueda se realizó el siguiente query:
 ```
 GET /employee-sps/_search
 {
@@ -166,12 +166,40 @@ Los 5 resultados que nos regresó fueron los siguientes:
 | 4to | Johnston | 20 | 79123.54 |
 | 5to | Kellie | 29 | 77131.15 |
 
-El primer lugar es un error ya que no debería aparacer como resultado ya que solamente cumple con el parametro de la edad pero no la del sueldo.
+El primer lugar es un error ya que no debería aparecer como resultado ya que solamente cumple con el parámetro de la edad pero no el del sueldo.
 
 ### 3. Tablero para Visualizar Información 
 
+Antes de realizar las vistas nos moveremos al menu de *Visualize*.
+También es necesario definir que *Index Pattern* usaremos en nuestro caso será `employee-*`.
+![IndexPattern](./Resources/IndexPattern.PNG)
+
+Una vez realicemos el paso anterior estamos listos para crear nuestras vistas.
+![Visualization](./Resources/Visualization.PNG)
+
+#### * *Vista de PIE - Clasificación por color de ojos*
+Agregaremos la opción que nos interesa, en este caso será la *Pie*.
+![PIE1](./Resources/PIE1.PNG)
+
+Después agregaremos *Métrics* y *Buckets* como se muestra en la imagen. para poder hacer un conteo de las personas con diferentes color de ojos. 
+![PIE2](./Resources/PIE2.PNG)
+Recuerda salvar tu vista para visualizarla cuando quieras.
+
+#### * *Vista de Barras - Número de empleados activos por compañía*
+Agregaremos la opción que nos interesa, en este caso será la *Vertical Bar*.
+![Bar1](./Resources/Bar1.PNG)
+
+Después agregaremos *Métrics* y *Buckets* como se muestra en la imagen. para poder hacer un conteo del número de empleados activos por compañía.
+![Bar2](./Resources/Bar2.PNG)
+Recuerda salvar tu vista para visualizarla cuando quieras.
+
+### 3. Dashboard
+Nos moveremos al menú de *Dashboard*. Una vez ahí, agregaremos ambas visualizaciones al dashboard para que sea visible al mismo tiempo y sin tener que editarlos.
+![Dashboard](./Resources/Dashboard.PNG)
+
 ## Práctica de Microservicios
 La documentación la puedes encontrar en [MICROSERVICIOS.md](./Microservicios/MICROSERVICIOS.md)
+
 
 ## Referencias
 * [ElasticSearchGuide](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
