@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "47e7ee26-1305-4ddb-8974-c0aa96d4b800",
+		"name": "SPSolution",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All_Animes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/animes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Anime",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sources\": [\r\n  \"https://myanimelist.net/anime/45106\"\r\n],\r\n\"title\": \"!NVADE SHOW!\",\r\n\"type\": \"SPECIAL\",\r\n\"episodes\": 1,\r\n\"status\": \"FINISHED\",\r\n\"animeSeason\": {\r\n  \"season\": \"UNDEFINED\",\r\n  \"year\": 2020\r\n},\r\n\"picture\": \"https://cdn.myanimelist.net/images/anime/1718/110969.jpg\",\r\n\"thumbnail\": \"https://cdn.myanimelist.net/images/anime/1718/110969t.jpg\",\r\n\"synonyms\": [],\r\n\"relations\": [\r\n  \"https://myanimelist.net/anime/33573\"\r\n],\r\n\"tags\": [\r\n  \"music\"\r\n]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/animes/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animes",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Specific Anime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/animes/anime/60f3abbfc29cb82f8063f482",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animes",
+						"anime",
+						"60f3abbfc29cb82f8063f482"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Anime",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/animes/delete/60f3a272b39f7a16fcc86d76",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animes",
+						"delete",
+						"60f3a272b39f7a16fcc86d76"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Anime",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"sources\": [\r\n  \"https://anidb.net/anime/14107\",\r\n  \"https://anilist.co/anime/101922\",\r\n  \"https://anime-planet.com/anime/demon-slayer-kimetsu-no-yaiba\",\r\n  \"https://kitsu.io/anime/41370\",\r\n  \"https://myanimelist.net/anime/38000\",\r\n  \"https://notify.moe/anime/5K5MBjvmR\"\r\n],\r\n\"title\": \"Kimetsu no Yaiba\",\r\n\"type\": \"TV\",\r\n\"episodes\": 26,\r\n\"status\": \"FINISHED\",\r\n\"animeSeason\": {\r\n  \"season\": \"SPRING\",\r\n  \"year\": 2019\r\n},\r\n\"picture\": \"https://cdn.myanimelist.net/images/anime/1286/99889.jpg\",\r\n\"thumbnail\": \"https://cdn.myanimelist.net/images/anime/1286/99889t.jpg\",\r\n\"synonyms\": [\r\n  \"Blade of Demon Destruction\",\r\n  \"Demon Slayer\",\r\n  \"Demon Slayer: Kimetsu no Yaiba\",\r\n  \"Demon Slayer: Kimetsu no Yaiba: Bonds of Siblings\",\r\n  \"Demon-slaying blade\",\r\n  \"Kimetsu no Yaiba: Kyoudai no Kizuna\",\r\n  \"Kimetsu no Yaiba: Riisshi Hen\",\r\n  \"KnY\",\r\n  \"Истребитель демонов\",\r\n  \"Клинок убивающий демонов\",\r\n  \"דימון סלייר\",\r\n  \"הלהב קוטל השדים\",\r\n  \"קוטל השדים\",\r\n  \"قاتل الشياطين\",\r\n  \"きめつのやいば\",\r\n  \"鬼滅の刃\",\r\n  \"鬼滅の刃-兄妹の絆-\",\r\n  \"鬼滅之刃\",\r\n  \"鬼灭之刃\",\r\n  \"귀멸의 칼날\"\r\n],\r\n\"relations\": [\r\n  \"https://anidb.net/anime/14689\",\r\n  \"https://anidb.net/anime/15113\",\r\n  \"https://anidb.net/anime/16056\",\r\n  \"https://anidb.net/anime/16258\",\r\n  \"https://anidb.net/anime/16259\",\r\n  \"https://anilist.co/anime/112151\",\r\n  \"https://anilist.co/anime/129627\",\r\n  \"https://anime-planet.com/anime/demon-slayer-kimetsu-no-yaiba-entertainment-district-arc\",\r\n  \"https://anime-planet.com/anime/demon-slayer-kimetsu-no-yaiba-movie-mugen-train\",\r\n  \"https://anime-planet.com/anime/kimetsu-gakuen-valentine-hen\",\r\n  \"https://kitsu.io/anime/42586\",\r\n  \"https://kitsu.io/anime/44063\",\r\n  \"https://kitsu.io/anime/44388\",\r\n  \"https://kitsu.io/anime/44389\",\r\n  \"https://kitsu.io/anime/44390\",\r\n  \"https://myanimelist.net/anime/40456\",\r\n  \"https://myanimelist.net/anime/47398\",\r\n  \"https://notify.moe/anime/LidKO4EMg\",\r\n  \"https://notify.moe/anime/a8hdTT2WR\"\r\n],\r\n\"tags\": [\r\n  \"action\",\r\n  \"adventure\",\r\n  \"based on a manga\",\r\n  \"body horror\",\r\n  \"cgi\",\r\n  \"chibi\",\r\n  \"comedy\",\r\n  \"coming of age\",\r\n  \"dark fantasy\",\r\n  \"death of a loved one\",\r\n  \"demon\",\r\n  \"demons\",\r\n  \"drama\",\r\n  \"fantasy\",\r\n  \"gore\",\r\n  \"historical\",\r\n  \"horror\",\r\n  \"japan\",\r\n  \"male protagonist\",\r\n  \"manga\",\r\n  \"martial arts\",\r\n  \"monster girl\",\r\n  \"mythology\",\r\n  \"orphans\",\r\n  \"primarily male cast\",\r\n  \"revenge\",\r\n  \"rotoscoping\",\r\n  \"rural\",\r\n  \"shounen\",\r\n  \"siblings\",\r\n  \"slapstick\",\r\n  \"super power\",\r\n  \"supernatural\",\r\n  \"swordplay\",\r\n  \"time skip\",\r\n  \"tragedy\",\r\n  \"violence\"\r\n]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/animes/update/60f3a272b39f7a16fcc86d76",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animes",
+						"update",
+						"60f3a272b39f7a16fcc86d76"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Random Anime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/animes/random",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Anime DB",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/animes/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animes",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
