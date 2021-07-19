@@ -68,7 +68,7 @@ Se realizaron 7 servicios diferentes:
 
 ![GetRandomAnime](../Resources/GetRandomAnime.PNG)
 
-6. Insertar varios documentos en la colección. En este caso se utilizó para poblar la base de datos.
+7. Insertar varios documentos en la colección. En este caso se utilizó para poblar la base de datos.
 
 ![InsertAnimeDB](../Resources/InsertAnimeDB.PNG)
 
